@@ -2,7 +2,14 @@
 import { ArrowUpRight, Clock3 } from 'lucide-react'
 import { services } from '../data/services'
 
-export default function Services() {
+// Props que recibe el componente desde App.tsx
+interface ServicesProps {
+  onSelectService: (id: string) => void
+}
+
+export default function Services({
+  onSelectService
+}: ServicesProps) {
   return (
     <section id="servicios" className="services-section">
       <div className="services-heading">
@@ -44,10 +51,19 @@ export default function Services() {
                   {service.duration} min
                 </span>
 
-                <strong>Desde S/ {service.price}</strong>
+                <strong>
+                  Desde S/ {service.price}
+                </strong>
               </div>
 
-              <a href="#reservas" className="service-link">
+              {/* Selecciona el servicio y abre reservas */}
+              <a
+                href="#reservas"
+                className="service-link"
+                onClick={() =>
+                  onSelectService(String(service.id))
+                }
+              >
                 Reservar servicio
                 <ArrowUpRight size={17} />
               </a>

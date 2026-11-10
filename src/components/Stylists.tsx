@@ -2,7 +2,13 @@
 import { ArrowUpRight } from 'lucide-react'
 import { stylists } from '../data/stylists'
 
-export default function Stylists() {
+interface StylistsProps {
+  onSelectStylist: (id: string) => void
+}
+
+export default function Stylists({
+  onSelectStylist
+}: StylistsProps) {
   return (
     <section id="estilistas" className="stylists-section">
       <div className="stylists-heading">
@@ -30,10 +36,10 @@ export default function Stylists() {
               <span>{stylist.specialty}</span>
               <p>{stylist.experience}</p>
 
-              <a href={`#reservas`} onClick={() => {
-                sessionStorage.setItem('selectedStylist', String(stylist.id))
-                window.dispatchEvent(new Event('stylist-selected'))
-                }}>
+              <a
+                href="#reservas"
+                onClick={() => onSelectStylist(String(stylist.id))}
+              >
                 Reservar con {stylist.name}
                 <ArrowUpRight size={16} />
               </a>

@@ -1,21 +1,32 @@
 
+import { useState } from 'react'
 import Stylists from './components/Stylists'
 import BookingForm from './components/BookingForm'
 import Services from './components/Services'
-import { CalendarDays, Sparkles } from 'lucide-react'
+import { CalendarDays, Sparkles, Menu, X } from 'lucide-react'
 import './App.css'
 
 function App() {
+  const [selectedServiceId, setSelectedServiceId] = useState('')
+  const [selectedStylistId, setSelectedStylistId] = useState('')
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const closeMenu = () => setIsMenuOpen(false)
   return (
     <>
+      
       {/* HEADER */}
       <header className="header">
-        <a href="#inicio" className="brand">
+        <a
+          href="#inicio"
+          className="brand"
+          onClick={closeMenu}
+        >
           CELY
           <span>SALON SPA</span>
         </a>
 
-        <nav className="navigation">
+        {/* Navegación para escritorio */}
+        <nav className="navigation" aria-label="Navegación principal">
           <a href="#inicio">Inicio</a>
           <a href="#servicios">Servicios</a>
           <a href="#estilistas">Estilistas</a>
@@ -25,7 +36,33 @@ function App() {
         <a href="#reservas" className="header-button">
           Reservar cita
         </a>
+
+        {/* Botón de menú móvil */}
+        <button
+          type="button"
+          className="mobile-menu-toggle"
+          aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={25} /> : <Menu size={25} />}
+        </button>
+
+        {/* Navegación para móviles */}
+        <nav
+          id="mobile-navigation"
+          className={`mobile-navigation ${isMenuOpen ? 'is-open' : ''}`}
+          aria-label="Navegación móvil"
+          inert={!isMenuOpen}
+        >
+          <a href="#inicio" onClick={closeMenu}>Inicio</a>
+          <a href="#servicios" onClick={closeMenu}>Servicios</a>
+          <a href="#estilistas" onClick={closeMenu}>Estilistas</a>
+          <a href="#reservas" onClick={closeMenu}>Reservas</a>
+        </nav>
       </header>
+
 
       <main>
         {/* SECCIÓN 1: INICIO */}
@@ -78,13 +115,18 @@ function App() {
         </section>
 
         {/* SECCIÓN 3: SERVICIOS */}
-        <Services />
+        <Services onSelectService={setSelectedServiceId} />
 
         {/* SECCIÓN 4: ESTILISTAS */}
-        <Stylists />
+        <Stylists onSelectStylist={setSelectedStylistId} />
 
         {/* SECCIÓN 5: RESERVAS */}
-        <BookingForm />
+        <BookingForm
+        selectedServiceId={selectedServiceId}
+        selectedStylistId={selectedStylistId}
+        onServiceChange={setSelectedServiceId}
+        onStylistChange={setSelectedStylistId}
+        />
       </main>
 
       {/* FOOTER */}

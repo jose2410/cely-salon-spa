@@ -501,3 +501,106 @@ footer {
     padding: 24px;
   }
 }
+.booking-error {
+  color: #a33c35;
+  background: #fff0ed;
+  border: 1px solid #e9c4bd;
+  padding: 12px 14px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* MOBILE NAVIGATION */
+
+.mobile-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #302c28;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.mobile-navigation {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+    padding: 16px 6%;
+    min-height: 78px;
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 29px;
+    margin-right: auto;
+  }
+
+  .brand span {
+    font-size: 8px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .header-button {
+    padding: 12px 14px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+
+  .mobile-navigation.is-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #f7f3eb;
+    padding: 12px 6% 24px;
+    border-top: 1px solid #e5d8c4;
+    box-shadow: 0 12px 20px rgba(48, 44, 40, 0.12);
+    z-index: 20;
+  }
+
+  .mobile-navigation a {
+    padding: 14px 8px;
+    color: #302c28;
+    font-size: 13px;
+    border-bottom: 1px solid #e5d8c4;
+  }
+
+  .mobile-navigation a:hover,
+  .mobile-navigation a:focus-visible {
+    color: #58624f;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-button {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .brand {
+    font-size: 25px;
+  }
+
+  .mobile-menu-toggle {
+    padding: 6px;
+  }
+}
