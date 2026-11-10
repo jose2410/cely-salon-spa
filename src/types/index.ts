@@ -8,3 +8,12 @@ export interface Service {
   category: string
   image: string
 }
+
+
+export interface Stylist {
+  id: number
+  name: string
+  specialty: string
+  experience: string
+  image: string
+}

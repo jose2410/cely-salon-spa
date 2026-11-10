@@ -333,3 +333,171 @@ footer {
     height: 280px;
   }
 }
+
+/* STYLISTS */
+
+.stylists-section {
+  padding: 100px 7%;
+  background: #ede6dc;
+}
+
+.stylists-heading,
+.booking-heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.stylists-heading h2,
+.booking-heading h2 {
+  font-size: clamp(38px, 4vw, 56px);
+  margin: 16px 0;
+}
+
+.stylists-heading p,
+.booking-heading p {
+  color: #756d63;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.stylists-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.stylist-card {
+  background: #fffdf9;
+}
+
+.stylist-image {
+  height: 320px;
+  overflow: hidden;
+}
+
+.stylist-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stylist-info {
+  padding: 24px;
+}
+
+.stylist-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+
+.stylist-info span {
+  color: #58624f;
+  font-size: 12px;
+}
+
+.stylist-info p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #756d63;
+}
+
+.stylist-info a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #e5d8c4;
+  padding-top: 16px;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #58624f;
+}
+
+/* BOOKING */
+
+.booking-section {
+  padding: 100px 7%;
+  background: #f7f3eb;
+}
+
+.booking-form {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #fffdf9;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.booking-form label {
+  display: block;
+  color: #302c28;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #e5d8c4;
+  background: white;
+  color: #302c28;
+  border-radius: 0;
+  padding: 14px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.booking-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.booking-submit {
+  border: none;
+  background: #58624f;
+  color: white;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.booking-submit:hover {
+  background: #414b3a;
+}
+
+.booking-form .booking-note {
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.7;
+  color: #756d63;
+}
+
+@media (max-width: 1100px) {
+  .stylists-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .stylists-section,
+  .booking-section {
+    padding: 70px 6%;
+  }
+
+  .stylists-grid,
+  .booking-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-form {
+    padding: 24px;
+  }
+}

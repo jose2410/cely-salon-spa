@@ -1,4 +1,6 @@
 
+import Stylists from './components/Stylists'
+import BookingForm from './components/BookingForm'
 import Services from './components/Services'
 import { CalendarDays, Sparkles } from 'lucide-react'
 import './App.css'
@@ -6,6 +8,7 @@ import './App.css'
 function App() {
   return (
     <>
+      {/* HEADER */}
       <header className="header">
         <a href="#inicio" className="brand">
           CELY
@@ -78,21 +81,10 @@ function App() {
         <Services />
 
         {/* SECCIÓN 4: ESTILISTAS */}
-        <section className="coming-soon" id="estilistas">
-          <h2>Conoce a nuestras especialistas</h2>
-          <p>
-            Muy pronto podrás conocer a nuestro equipo.
-          </p>
-        </section>
+        <Stylists />
 
         {/* SECCIÓN 5: RESERVAS */}
-        <section className="coming-soon" id="reservas">
-          <h2>Reserva tu cita</h2>
-          <p>
-            Próximamente podrás seleccionar tu servicio
-            y estilista.
-          </p>
-        </section>
+        <BookingForm />
       </main>
 
       {/* FOOTER */}
