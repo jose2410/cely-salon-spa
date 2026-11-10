@@ -5,7 +5,7 @@ import { CalendarDays, MessageCircle } from 'lucide-react'
 import { services } from '../data/services'
 import { stylists } from '../data/stylists'
 
-const WHATSAPP_NUMBER = '+51 945 859 742' // Agregar número real con código 51
+const WHATSAPP_NUMBER = '51945859742' // Agregar número real con código 51
 
 export default function BookingForm() {
   const [serviceId, setServiceId] = useState('')
