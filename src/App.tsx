@@ -1,4 +1,5 @@
 
+import Services from './components/Services'
 import { CalendarDays, Sparkles } from 'lucide-react'
 import './App.css'
 
@@ -24,6 +25,7 @@ function App() {
       </header>
 
       <main>
+        {/* SECCIÓN 1: INICIO */}
         <section id="inicio" className="hero">
           <div className="hero-content">
             <div className="eyebrow">
@@ -57,11 +59,14 @@ function App() {
           </div>
         </section>
 
-        <section className="welcome" id="servicios">
+        {/* SECCIÓN 2: BIENVENIDA */}
+        <section className="welcome">
           <span className="section-label">
             BIENVENIDA A CELY SALON SPA
           </span>
+
           <h2>La belleza está en cada detalle</h2>
+
           <p>
             Un refugio de tranquilidad y elegancia,
             creado para que disfrutes de un momento
@@ -69,19 +74,33 @@ function App() {
           </p>
         </section>
 
+        {/* SECCIÓN 3: SERVICIOS */}
+        <Services />
+
+        {/* SECCIÓN 4: ESTILISTAS */}
         <section className="coming-soon" id="estilistas">
           <h2>Conoce a nuestras especialistas</h2>
-          <p>Muy pronto podrás conocer a nuestro equipo.</p>
+          <p>
+            Muy pronto podrás conocer a nuestro equipo.
+          </p>
         </section>
 
+        {/* SECCIÓN 5: RESERVAS */}
         <section className="coming-soon" id="reservas">
           <h2>Reserva tu cita</h2>
-          <p>Próximamente podrás seleccionar tu servicio y estilista.</p>
+          <p>
+            Próximamente podrás seleccionar tu servicio
+            y estilista.
+          </p>
         </section>
       </main>
 
+      {/* FOOTER */}
       <footer>
-        <p>© 2026 Cely Salon Spa. Todos los derechos reservados.</p>
+        <p>
+          © 2026 Cely Salon Spa.
+          Todos los derechos reservados.
+        </p>
       </footer>
     </>
   )
